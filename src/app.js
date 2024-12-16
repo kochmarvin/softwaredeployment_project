@@ -10,6 +10,12 @@ app.get("/", (req, res) => {
   });
 });
 
+app.get("/hello", (req, res) => {
+    res.send({
+      message: "Greetings mister unkwon",
+    });
+  });
+
 if (process.env.NODE_ENV !== "test") {
   const port = process.env.PORT || 3000;
   app.listen(port, () => {
