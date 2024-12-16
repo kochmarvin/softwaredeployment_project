@@ -11,10 +11,16 @@ app.get("/", (req, res) => {
 });
 
 app.get("/hello", (req, res) => {
-    res.send({
-      message: "Greetings mister unkwon",
-    });
+  res.send({
+    message: "Greetings mister unkwon",
   });
+});
+
+app.get("/world", (req, res) => {
+  res.send({
+    message: "Hello World",
+  });
+});
 
 if (process.env.NODE_ENV !== "test") {
   const port = process.env.PORT || 3000;
