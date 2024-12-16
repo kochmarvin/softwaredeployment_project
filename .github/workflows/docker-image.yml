@@ -9,6 +9,7 @@ on:
 env:
   REGISTRY: marvincook
   IMAGE_NAME: swdwstk
+  AZURE_WEBAPP_NAME: werfringstreimeltukakoch
   
 jobs:
   push_to_registry:
@@ -44,3 +45,10 @@ jobs:
           push: true
           tags: marvincook/swdwstk:development
           labels: ${{ steps.meta.outputs.labels }}
+      - name: Deploy to Azure Web App
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@85270a1854658d167ab239bce43949edb336fa7c
+        with:
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          images: 'marvincook/swdwstk:development'
