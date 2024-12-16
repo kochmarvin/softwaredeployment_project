@@ -22,6 +22,12 @@ app.get("/world", (req, res) => {
   });
 });
 
+app.get("/max", (req, res) => {
+  res.send({
+    message: "Max",
+  });
+});
+
 if (process.env.NODE_ENV !== "test") {
   const port = process.env.PORT || 3000;
   app.listen(port, () => {
