@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [ "main" ]
 
+env:
+  REGISTRY: marvincook
+  IMAGE_NAME: swdwstk
+  
 jobs:
   push_to_registry:
     name: Push Docker image to Docker Hub
