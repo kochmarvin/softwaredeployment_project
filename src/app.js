@@ -10,6 +10,12 @@ app.get("/", (req, res) => {
   });
 });
 
+app.get("/production", (req, res) => {
+  res.send({
+    message: "This is a production route.",
+  });
+});
+
 if (process.env.NODE_ENV !== "test") {
   const port = process.env.PORT || 3000;
   app.listen(port, () => {
