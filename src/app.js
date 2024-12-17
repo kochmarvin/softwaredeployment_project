@@ -10,31 +10,6 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get("/hello", (req, res) => {
-  res.send({
-    message: "Greetings mister unkwon",
-  });
-});
-
-app.get("/world", (req, res) => {
-  res.send({
-    message: "Hello World",
-  });
-});
-
-app.get("/max", (req, res) => {
-  res.send({
-    message: "Max",
-  });
-});
-
-app.get("/hook", (req, res) => {
-  res.send({
-    message: "HOOOOOK",
-  });
-});
-
-
 if (process.env.NODE_ENV !== "test") {
   const port = process.env.PORT || 3000;
   app.listen(port, () => {
