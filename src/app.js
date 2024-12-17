@@ -28,6 +28,13 @@ app.get("/max", (req, res) => {
   });
 });
 
+app.get("/hook", (req, res) => {
+  res.send({
+    message: "HOOOOOK",
+  });
+});
+
+
 if (process.env.NODE_ENV !== "test") {
   const port = process.env.PORT || 3000;
   app.listen(port, () => {
