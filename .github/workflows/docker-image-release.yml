@@ -2,12 +2,13 @@ name: Docker Image CI
 
 on:
   pull_request:
-    branches: ["release"]
+      types: [closed]
+      branches: [ "release" ]
 
 env:
   REGISTRY: marvincook
   IMAGE_NAME: swdwstk
-  AZURE_WEBAPP_NAME: werfringstreimeltukakoch
+  AZURE_WEBAPP_NAME: production-werfringstreimeltukakoch
 
 jobs:
   run_tests:
@@ -57,6 +58,6 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@85270a1854658d167ab239bce43949edb336fa7c
         with:
-          app-name: ${{ env.AZURE_WEBAPP_NAME_PRODUCTION }}
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_PRODUCTION }}
           images: "marvincook/swdwstk:latest"
