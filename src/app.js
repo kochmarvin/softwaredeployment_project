@@ -10,21 +10,9 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get("/hello", (req, res) => {
+app.get("/production", (req, res) => {
   res.send({
-    message: "Greetings mister unkwon",
-  });
-});
-
-app.get("/world", (req, res) => {
-  res.send({
-    message: "Hello World",
-  });
-});
-
-app.get("/max", (req, res) => {
-  res.send({
-    message: "Max",
+    message: "This is a production route.",
   });
 });
 
