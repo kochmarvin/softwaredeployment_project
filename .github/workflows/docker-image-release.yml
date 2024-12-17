@@ -15,8 +15,17 @@ jobs:
     runs-on: ubuntu-latest
     name: Run test of application
     steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+
       - name: Install dependencies
         run: npm install
+
       - name: Run tests
         id: test
         run: npm test
