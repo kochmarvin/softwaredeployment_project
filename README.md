@@ -14,7 +14,7 @@ The Azure Web App is updated using a `WebHook` and deploys the new Docker image 
 If the changes are to be taken to `Production Branch`, a `Pull Request` on GitHub is made and has to be approved by at least one person. This deploys the changes to the production site. 
 
 ## How to deploy changes
-1. 'Push` changes to main branch 
+1. `Push` changes to main branch 
 2. Wait for `GitHub Action` to finish
 3. See changes on `Developement` site 
 4. Create `Pull Request`: Main -> Release 
