@@ -16,6 +16,12 @@ app.get("/production", (req, res) => {
   });
 });
 
+app.get("/testv3", (req, res) => {
+  res.send({
+    message: "This is a v3 route.",
+  });
+});
+
 if (process.env.NODE_ENV !== "test") {
   const port = process.env.PORT || 3000;
   app.listen(port, () => {
